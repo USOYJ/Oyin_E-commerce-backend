@@ -43,19 +43,22 @@ router.post('/', async (req, res) => {
 });
 
 router.put('/:id', async (req, res) => {
-  await Tag.update(req.body, {
-    where: {
-      id: req.params.id,
-    },
+  try {
+    const [affectedRowsCount, affectedRows] = await Tag.update(req.body, {
+      where: {
+        id: req.params.id,
+      },
+    });
+
+    if (affectedRowsCount > 0) {
+      res.status(200).json(affectedRows);
+    } else {
+      res.status(404).json({ message: 'Tag not found' });
+    }
+  } catch (err) {
+    console.error(err);
+    res.status(400).json(err);
   }
-    .then((tag) => {
-      res.status(200).json(tag);
-    })
-    .catch((err) => {
-      console.log(err);
-      res.status(400).json(err);
-    })
-  );
 });
 
 
