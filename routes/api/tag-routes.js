@@ -29,27 +29,31 @@ router.get('/:id', async (req, res) => {
 
 router.post('/', async (req, res) => {
   await Tag.create(req.body)
-  .then((tag) => {
-    res.status(200).json(tag);
-  })
-  .catch((err) => {
-    console.log(err);
-    res.status(400).json(err);
-  });
+    .then((tag) => {
+      res.status(200).json(tag);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(400).json(err);
+    });
 });
 
 router.put('/:id', async (req, res) => {
-  await Tag.update(req.body)
-  .then((tag) => {
-    res.status(200).json(tag);
+  await Tag.update(req.body, {
+    where: {
+      id: req.params.id,
+    },
   })
-  .catch((err) => {
-    console.log(err);
-    res.status(400).json(err);
-  });
+    .then((tag) => {
+      res.status(200).json(tag);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(400).json(err);
+    });
 });
 
-router.delete('/:id', async(req, res) => {
+router.delete('/:id', async (req, res) => {
   try {
     const singleTagData = await Tag.destroy({
       where: {
