@@ -86,22 +86,22 @@ router.put('/:id', async (req, res) => {
 
 router.delete('/:id', async (req, res) => {
   try {
-    const singleProductData = await Product.destroy({
+    const affectedRowsCount = await Tag.destroy({
       where: {
-        id: req.params.id
-      }
+        id: req.params.id,
+      },
     });
 
-    if (!singleProductData) {
-      res.status(404).json({ message: 'No product found with that id!' });
-      return;
+    if (affectedRowsCount > 0) {
+      res.status(204).send(); 
+    } else {
+      res.status(404).json({ message: 'Tag not found' });
     }
-    res.status(200).json(singleProductData);
   } catch (err) {
-    res.status(500).json(err);
+    console.error(err);
+    res.status(400).json(err);
   }
 });
-
 
 
 module.exports = router;
