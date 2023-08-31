@@ -21,8 +21,15 @@ Our challenge this week is to build the back end for an e-commerce site. We need
 
 ## Video Link: 
 
-
 ## Screenshots:
+
+<img width="1399" alt="Screenshot 2023-08-31 at 7 25 21 PM" src="https://github.com/USOYJ/Oyin_E-commerce-backend/assets/125850331/d29074cd-6ddc-441d-b41c-678bd61dcb1f">
+
+
+<img width="1429" alt="Screenshot 2023-08-31 at 7 26 37 PM" src="https://github.com/USOYJ/Oyin_E-commerce-backend/assets/125850331/002235ac-d575-476b-95ae-048bf5fd884a">
+
+
+<img width="1421" alt="Screenshot 2023-08-31 at 7 25 41 PM" src="https://github.com/USOYJ/Oyin_E-commerce-backend/assets/125850331/0d2b7aee-961d-487d-b170-c35df23e8df8">
 
 
 
