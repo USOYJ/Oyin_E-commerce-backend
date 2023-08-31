@@ -28,18 +28,14 @@ router.get('/:id', async (req, res) => {
 });
 
 router.post('/', async (req, res) => {
-  await Tag.create(req.body, {
-    where: {
-      id: req.params.id,
-    },
+  try {
+    const tag = await Tag.create(req.body); 
+
+    res.status(200).json(tag); 
+  } catch (err) {
+    console.error(err);
+    res.status(400).json(err);
   }
-    .then((tag) => {
-      res.status(200).json(tag);
-    })
-    .catch((err) => {
-      console.log(err);
-      res.status(400).json(err);
-    }));
 });
 
 router.put('/:id', async (req, res) => {
