@@ -20,6 +20,7 @@ Our challenge this week is to build the back end for an e-commerce site. We need
 
 
 ## Video Link: 
+<video src="ORM challenge.mov" controls></video>
 
 ## Screenshots:
 
