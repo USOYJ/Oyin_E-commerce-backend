@@ -20,7 +20,7 @@ Our challenge this week is to build the back end for an e-commerce site. We need
 
 
 ## Video Link: 
-<p>Click here for video: <video src="ORM.mp4" controls></video></p>
+<p> Click here to view video <a href="https://watch.screencastify.com/v/8OGd2aQvRWlV6CljuLXD">link</a></p>
 
 ## Screenshots:
 
